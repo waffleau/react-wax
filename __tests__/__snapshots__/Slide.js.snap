@@ -1,0 +1,107 @@
+exports[`test can transition down 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(0,  100%, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can transition down-left 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(-100%,  100%, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can transition down-right 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(100%,  100%, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can transition left 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(-100%, 0, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can transition right 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(100%, 0, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can transition up 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(0, 0, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can transition up-left 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(-100%,  -100%, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can transition up-right 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(100%,  -100%, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test has no translation when inactive 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translate3d(0, 0, 0)",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;

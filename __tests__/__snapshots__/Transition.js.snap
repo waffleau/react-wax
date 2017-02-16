@@ -1,0 +1,84 @@
+exports[`test can be active 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can be inactive 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "red",
+      "transition": "backgroundColor 600ms linear",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom duration 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 9999ms linear",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom easing 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom style 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "color": "yellow",
+      "transition": "backgroundColor 600ms linear",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom timing 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms cubic-bezier(0.250, 0.250, 0.750, 0.750)",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test prefers easing over timing 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;

@@ -1,0 +1,51 @@
+exports[`test can rotate to 90 degrees 1`] = `
+<div
+  style={
+    Object {
+      "transform": "rotate(90deg)",
+      "transformOrigin": "center center",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can rotate to 180 degrees 1`] = `
+<div
+  style={
+    Object {
+      "transform": "rotate(180deg)",
+      "transformOrigin": "center center",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can rotate to 270 degrees 1`] = `
+<div
+  style={
+    Object {
+      "transform": "rotate(270deg)",
+      "transformOrigin": "center center",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test has no rotation when inactive 1`] = `
+<div
+  style={
+    Object {
+      "transform": "rotate(0deg)",
+      "transformOrigin": "center center",
+      "transition": "transform 600ms ease-in-out",
+    }
+  }>
+  Children
+</div>
+`;
