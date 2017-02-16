@@ -1,4 +1,4 @@
-# React Wax [![npm package][npm-badge]][npm]
+# React Wax [![npm version](https://badge.fury.io/js/react-wax.svg)](https://badge.fury.io/js/react-wax)
 
 Component library for React for easy transitions, designed for composition, exclusively using GPU accelerated CSS properties to ensure good performance across devices.
 
