@@ -10,8 +10,8 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'react-transitions.js',
-    library: 'ReactTransitions',
+    filename: 'react-shift.js',
+    library: 'ReactShift',
     libraryTarget: 'umd'
   },
 

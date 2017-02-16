@@ -1,8 +1,8 @@
 {
-  "name": "react-transitions",
+  "name": "react-shift",
   "version": "1.0.0",
-  "description": "Pre-baked transition components for React",
-  "main": "dist/react-transitions.js",
+  "description": "Component library for React providing simple and efficient transitions",
+  "main": "dist/react-shift.js",
   "scripts": {
     "build": "webpack --config webpack.publish.js",
     "clean": "rimraf dist",
@@ -15,14 +15,18 @@
   },
   "keywords": [
     "react",
-    "transition"
+    "shift",
+    "animate",
+    "animation",
+    "transition",
+    "transitions"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/waffleau/react-transitions.git"
+    "url": "https://github.com/waffleau/react-shift.git"
   },
-  "homepage": "https://github.com/waffleau/react-transitions",
-  "bugs": "https://github.com/waffleau/react-transitions/issues",
+  "homepage": "https://github.com/waffleau/react-shift",
+  "bugs": "https://github.com/waffleau/react-shift/issues",
   "author": "Matt Ellis",
   "license": "MIT",
   "devDependencies": {

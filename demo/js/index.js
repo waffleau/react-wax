@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
-import Transitions from '../../src'
+import ReactShift from '../../src'
 import TransitionGroup from './TransitionGroup'
 
 const styles = {
@@ -25,53 +25,53 @@ export default class Root extends Component {
       <div>
         <TransitionGroup name="Fade">
           {(active, duration) => (
-            <Transitions.Fade
+            <ReactShift.Fade
               active={active}
               duration={duration}>
               {indicator}
-            </Transitions.Fade>
+            </ReactShift.Fade>
           )}
         </TransitionGroup>
         <TransitionGroup name="Slide">
           {(active, duration) => (
-            <Transitions.Slide
+            <ReactShift.Slide
               active={active}
               duration={duration}
               direction="right">
               {indicator}
-            </Transitions.Slide>
+            </ReactShift.Slide>
           )}
         </TransitionGroup>
         <TransitionGroup name="Scale">
           {(active, duration) => (
-            <Transitions.Scale
+            <ReactShift.Scale
               active={active}
               duration={duration}>
               {indicator}
-            </Transitions.Scale>
+            </ReactShift.Scale>
           )}
         </TransitionGroup>
         <TransitionGroup name="Rotate">
           {(active, duration) => (
-            <Transitions.Rotate
+            <ReactShift.Rotate
               active={active}
               angle={180}
               duration={duration}>
               {indicator}
-            </Transitions.Rotate>
+            </ReactShift.Rotate>
           )}
         </TransitionGroup>
         <TransitionGroup name="Fade + Scale">
           {(active, duration) => (
-            <Transitions.Scale
+            <ReactShift.Scale
               active={active}
               duration={duration}>
-              <Transitions.Fade
+              <ReactShift.Fade
                 active={active}
                 duration={duration}>
                 {indicator}
-              </Transitions.Fade>
-            </Transitions.Scale>
+              </ReactShift.Fade>
+            </ReactShift.Scale>
           )}
         </TransitionGroup>
       </div>

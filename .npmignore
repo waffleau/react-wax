@@ -1,8 +1,14 @@
-example
+.git
+__tests__
+demo
+docs
 node_modules
 src
 
 .babelrc
 .eslintrc
-karma.config.js
-webpack.config.js
+.gitignore
+npm-debug.log
+webpack.dev.js
+webpack.docs.js
+webpack.publish.js
