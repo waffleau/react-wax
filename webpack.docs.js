@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'docs'),
     filename: 'demo.bundle.js',
-    library: 'ReactShiftDocs',
+    library: 'ReactWaxDocs',
     libraryTarget: 'umd'
   },
 

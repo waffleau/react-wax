@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
-import ReactShift from '../../src'
+import ReactWax from '../../src'
 import TransitionGroup from './TransitionGroup'
 
 const styles = {
@@ -25,53 +25,53 @@ export default class Root extends Component {
       <div>
         <TransitionGroup name="Fade">
           {(active, duration) => (
-            <ReactShift.Fade
+            <ReactWax.Fade
               active={active}
               duration={duration}>
               {indicator}
-            </ReactShift.Fade>
+            </ReactWax.Fade>
           )}
         </TransitionGroup>
         <TransitionGroup name="Slide">
           {(active, duration) => (
-            <ReactShift.Slide
+            <ReactWax.Slide
               active={active}
               duration={duration}
               direction="right">
               {indicator}
-            </ReactShift.Slide>
+            </ReactWax.Slide>
           )}
         </TransitionGroup>
         <TransitionGroup name="Scale">
           {(active, duration) => (
-            <ReactShift.Scale
+            <ReactWax.Scale
               active={active}
               duration={duration}>
               {indicator}
-            </ReactShift.Scale>
+            </ReactWax.Scale>
           )}
         </TransitionGroup>
         <TransitionGroup name="Rotate">
           {(active, duration) => (
-            <ReactShift.Rotate
+            <ReactWax.Rotate
               active={active}
               angle={180}
               duration={duration}>
               {indicator}
-            </ReactShift.Rotate>
+            </ReactWax.Rotate>
           )}
         </TransitionGroup>
         <TransitionGroup name="Fade + Scale">
           {(active, duration) => (
-            <ReactShift.Scale
+            <ReactWax.Scale
               active={active}
               duration={duration}>
-              <ReactShift.Fade
+              <ReactWax.Fade
                 active={active}
                 duration={duration}>
                 {indicator}
-              </ReactShift.Fade>
-            </ReactShift.Scale>
+              </ReactWax.Fade>
+            </ReactWax.Scale>
           )}
         </TransitionGroup>
       </div>

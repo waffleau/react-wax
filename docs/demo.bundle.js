@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["ReactTransitionsDocs"] = factory();
+		exports["ReactShiftDocs"] = factory();
 	else
-		root["ReactTransitionsDocs"] = factory();
+		root["ReactShiftDocs"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache

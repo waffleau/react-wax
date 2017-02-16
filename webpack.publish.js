@@ -10,8 +10,8 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'react-shift.js',
-    library: 'ReactShift',
+    filename: 'react-wax.js',
+    library: 'ReactWax',
     libraryTarget: 'umd'
   },
 
