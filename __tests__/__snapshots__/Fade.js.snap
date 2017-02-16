@@ -3,7 +3,7 @@ exports[`test can specify a maximum opacity 1`] = `
   style={
     Object {
       "opacity": 0.9,
-      "transition": "opacity 600ms linear",
+      "transition": "opacity 600ms linear 0ms",
     }
   }>
   Children
@@ -15,7 +15,7 @@ exports[`test can specify a minimum opacity 1`] = `
   style={
     Object {
       "opacity": 0.1,
-      "transition": "opacity 600ms linear",
+      "transition": "opacity 600ms linear 0ms",
     }
   }>
   Children
@@ -27,7 +27,7 @@ exports[`test has opacity 0 when inactive 1`] = `
   style={
     Object {
       "opacity": 0,
-      "transition": "opacity 600ms linear",
+      "transition": "opacity 600ms linear 0ms",
     }
   }>
   Children
@@ -39,7 +39,7 @@ exports[`test has opacity 1 when active 1`] = `
   style={
     Object {
       "opacity": 1,
-      "transition": "opacity 600ms linear",
+      "transition": "opacity 600ms linear 0ms",
     }
   }>
   Children

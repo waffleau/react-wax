@@ -3,7 +3,7 @@ exports[`test can be active 1`] = `
   style={
     Object {
       "backgroundColor": "blue",
-      "transition": "backgroundColor 600ms linear",
+      "transition": "backgroundColor 600ms linear 0ms",
     }
   }>
   Children
@@ -15,7 +15,19 @@ exports[`test can be inactive 1`] = `
   style={
     Object {
       "backgroundColor": "red",
-      "transition": "backgroundColor 600ms linear",
+      "transition": "backgroundColor 600ms linear 0ms",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom delay 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear 2222ms",
     }
   }>
   Children
@@ -27,7 +39,7 @@ exports[`test can have a custom duration 1`] = `
   style={
     Object {
       "backgroundColor": "blue",
-      "transition": "backgroundColor 9999ms linear",
+      "transition": "backgroundColor 9999ms linear 0ms",
     }
   }>
   Children
@@ -39,7 +51,7 @@ exports[`test can have a custom easing 1`] = `
   style={
     Object {
       "backgroundColor": "blue",
-      "transition": "backgroundColor 600ms ease-in-out",
+      "transition": "backgroundColor 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -52,7 +64,7 @@ exports[`test can have a custom style 1`] = `
     Object {
       "backgroundColor": "blue",
       "color": "yellow",
-      "transition": "backgroundColor 600ms linear",
+      "transition": "backgroundColor 600ms linear 0ms",
     }
   }>
   Children
@@ -64,7 +76,7 @@ exports[`test can have a custom timing 1`] = `
   style={
     Object {
       "backgroundColor": "blue",
-      "transition": "backgroundColor 600ms cubic-bezier(0.250, 0.250, 0.750, 0.750)",
+      "transition": "backgroundColor 600ms cubic-bezier(0.250, 0.250, 0.750, 0.750) 0ms",
     }
   }>
   Children
@@ -76,7 +88,7 @@ exports[`test prefers easing over timing 1`] = `
   style={
     Object {
       "backgroundColor": "blue",
-      "transition": "backgroundColor 600ms ease-in-out",
+      "transition": "backgroundColor 600ms ease-in-out 0ms",
     }
   }>
   Children

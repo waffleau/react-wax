@@ -4,7 +4,7 @@ exports[`test can rotate to 90 degrees 1`] = `
     Object {
       "transform": "rotate(90deg)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -17,7 +17,7 @@ exports[`test can rotate to 180 degrees 1`] = `
     Object {
       "transform": "rotate(180deg)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -30,7 +30,7 @@ exports[`test can rotate to 270 degrees 1`] = `
     Object {
       "transform": "rotate(270deg)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -43,7 +43,7 @@ exports[`test has no rotation when inactive 1`] = `
     Object {
       "transform": "rotate(0deg)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children

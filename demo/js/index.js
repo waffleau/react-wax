@@ -74,6 +74,20 @@ export default class Root extends Component {
             </ReactWax.Scale>
           )}
         </TransitionGroup>
+        <TransitionGroup name="Fade + Slide">
+          {(active, duration) => (
+            <ReactWax.Slide
+              active={active}
+              duration={duration}
+              direction="right">
+              <ReactWax.Fade
+                active={active}
+                duration={duration}>
+                {indicator}
+              </ReactWax.Fade>
+            </ReactWax.Slide>
+          )}
+        </TransitionGroup>
       </div>
     )
   }

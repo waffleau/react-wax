@@ -4,7 +4,7 @@ exports[`test can specify a maximum x scale 1`] = `
     Object {
       "transform": "scale3d(1.1, 1, 1)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -17,7 +17,7 @@ exports[`test can specify a maximum y scale 1`] = `
     Object {
       "transform": "scale3d(1, 1.1, 1)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -30,7 +30,7 @@ exports[`test can specify a minimum x scale 1`] = `
     Object {
       "transform": "scale3d(0.1, 0, 1)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -43,7 +43,7 @@ exports[`test can specify a minimum y scale 1`] = `
     Object {
       "transform": "scale3d(0, 0.1, 1)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -56,7 +56,7 @@ exports[`test has no scale when inactive 1`] = `
     Object {
       "transform": "scale3d(0, 0, 1)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children
@@ -69,7 +69,7 @@ exports[`test has scale of 1 when active 1`] = `
     Object {
       "transform": "scale3d(1, 1, 1)",
       "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out",
+      "transition": "transform 600ms ease-in-out 0ms",
     }
   }>
   Children

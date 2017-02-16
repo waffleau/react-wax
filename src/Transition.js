@@ -10,6 +10,7 @@ const EasingTypes = {
 const BaseProps = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.any,
+  delay: PropTypes.number,
   duration: PropTypes.number,
   easing: PropTypes.oneOf(Object.keys(EasingTypes)),
   style: PropTypes.object,
@@ -21,6 +22,7 @@ export class Transition extends PureComponent {
 
   static defaultProps = {
     active: true,
+    delay: 0,
     duration: 600,
     style: {}
   }
@@ -41,13 +43,19 @@ export class Transition extends PureComponent {
   }
 
   getStyle() {
-    const {active, duration, fromValue, style, toValue } = this.props
+    const {active, fromValue, style, toValue} = this.props
 
     return {
-      transition: `${this.getProperty()} ${duration}ms ${this.getEasing()}`,
+      transition: this.getTransition(),
       ...(active ? toValue : fromValue),
       ...style
     }
+  }
+
+  getTransition() {
+    const {delay, duration} = this.props
+
+    return `${this.getProperty()} ${duration}ms ${this.getEasing()} ${delay}ms`
   }
 
   render() {

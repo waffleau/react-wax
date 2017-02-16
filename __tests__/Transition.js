@@ -29,6 +29,20 @@ test('can be active', () => {
   expect(tree).toMatchSnapshot()
 })
 
+test('can have a custom delay', () => {
+  const tree = renderer.create(
+    <Transition
+      active
+      delay={2222}
+      fromValue={{ backgroundColor: 'red' }}
+      toValue={{ backgroundColor: 'blue' }}>
+      {'Children'}
+    </Transition>
+  ).toJSON()
+
+  expect(tree).toMatchSnapshot()
+})
+
 test('can have a custom duration', () => {
   const tree = renderer.create(
     <Transition
