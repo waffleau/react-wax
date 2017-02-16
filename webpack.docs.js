@@ -2,18 +2,13 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: path.resolve('src', 'index.js'),
-
-  externals: {
-    'react': 'react'
-  },
+  entry: path.resolve('demo', 'js', 'index.js'),
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'react-transitions.js',
-    library: 'ReactTransitions',
+    path: path.resolve(__dirname, 'docs'),
+    filename: 'demo.bundle.js',
+    library: 'ReactTransitionsDocs',
     libraryTarget: 'umd'
-
   },
 
   module: {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
-import Transitions from '../src'
+import Transitions from '../../src'
 import TransitionGroup from './TransitionGroup'
 
 const styles = {
@@ -16,7 +16,7 @@ const styles = {
 const indicator = (
   <img
     style={styles.indicator}
-    src="react.svg" />
+    src="https://res.cloudinary.com/teepublic/image/private/s--1UWIFLXd--/t_Preview/b_rgb:484849,c_limit,f_jpg,h_630,q_90,w_630/v1476459650/production/designs/733956_1.jpg" />
 )
 
 export default class Root extends Component {

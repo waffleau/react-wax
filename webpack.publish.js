@@ -2,14 +2,17 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: path.resolve('demo', 'js', 'index.js'),
+  entry: path.resolve('src', 'index.js'),
 
-  devtool: 'inline-source-map',
+  externals: {
+    'react': 'react'
+  },
 
   output: {
-    path: '/demo',
-    publicPath: 'demo',
-    filename: 'demo.bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'react-transitions.js',
+    library: 'ReactTransitions',
+    libraryTarget: 'umd'
   },
 
   module: {
@@ -25,13 +28,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development')
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      eslint: {
-        failOnWarning: false,
-        failOnError: false
+        NODE_ENV: JSON.stringify('production')
       }
     })
   ]

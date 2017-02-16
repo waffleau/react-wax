@@ -16,7 +16,6 @@ export class Scale extends PureComponent {
     maxY: PropTypes.number,
     minX: PropTypes.number,
     minY: PropTypes.number
-
   }
 
   getFromValue() {

@@ -4,9 +4,10 @@
   "description": "Pre-baked transition components for React",
   "main": "dist/react-transitions.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.build.js",
+    "build": "webpack --config webpack.publish.js",
     "clean": "rimraf dist",
     "dev": "webpack-dev-server --config webpack.dev.js --colors --hot --progress",
+    "docs": "webpack --config webpack.docs.js && cp demo/index.html docs/index.html",
     "lint": "eslint src",
     "prepublish": "npm run test && npm run clean && npm run build",
     "snapshot": "jest -u",
