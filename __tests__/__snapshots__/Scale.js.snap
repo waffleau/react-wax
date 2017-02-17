@@ -2,7 +2,7 @@ exports[`test can specify a maximum x scale 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(1.1, 1, 1)",
+      "transform": "scale3d(1, 1, 1)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
@@ -15,7 +15,7 @@ exports[`test can specify a maximum y scale 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(1, 1.1, 1)",
+      "transform": "scale3d(1, 1, 1)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
@@ -28,7 +28,7 @@ exports[`test can specify a minimum x scale 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(0.1, 0, 1)",
+      "transform": "scale3d(0, 0, 1)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
@@ -41,7 +41,7 @@ exports[`test can specify a minimum y scale 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(0, 0.1, 1)",
+      "transform": "scale3d(0, 0, 1)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
