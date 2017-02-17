@@ -18,6 +18,7 @@ export class Slide extends PureComponent {
   static directions = Directions
 
   static defaultProps = {
+    easing: 'easeInOut',
     from: 'center'
   }
 
@@ -58,7 +59,6 @@ export class Slide extends PureComponent {
     return (
       <Transition
         {...this.props}
-        easing="easeInOut"
         fromValue={this.getFromValue()}
         toValue={this.getToValue()}>
         {children}

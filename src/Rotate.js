@@ -4,6 +4,7 @@ import Transition from './Transition'
 
 export class Rotate extends PureComponent {
   static defaultProps = {
+    easing: 'easeInOut',
     from: 0
   }
 
@@ -39,7 +40,6 @@ export class Rotate extends PureComponent {
       <Transition
         {...this.props}
         style={this.getStyle()}
-        easing="easeInOut"
         fromValue={this.getFromValue()}
         toValue={this.getToValue()}>
         {children}

@@ -19,6 +19,7 @@ const BaseProps = {
 
 export class Transition extends PureComponent {
   static baseProps = BaseProps
+  static easingTypes = EasingTypes
 
   static defaultProps = {
     active: true,

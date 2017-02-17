@@ -2,10 +2,9 @@ import React, {Component} from 'react'
 
 import ReactWax from '../../src'
 
-import Button from './Button'
 import CodeBlock from './CodeBlock'
-import NumberInput from './NumberInput'
 import SelectInput from './SelectInput'
+import TransitionForm from './TransitionForm'
 import TransitionIndicator from './TransitionIndicator'
 
 export default class ExampleSlide extends Component {
@@ -13,6 +12,7 @@ export default class ExampleSlide extends Component {
     active: false,
     delay: 0,
     duration: 600,
+    easing: 'easeInOut',
     from: 'center',
     to: 'left'
   }
@@ -21,14 +21,8 @@ export default class ExampleSlide extends Component {
     this.setState({ [name]: value })
   }
 
-  handleToggle = () => {
-    this.setState(prevState => ({
-      active: !prevState.active
-    }))
-  }
-
   render() {
-    const {active, delay, duration, from, to} = this.state
+    const {active, delay, duration, easing, from, to} = this.state
     return (
       <div className="row">
         <div className="col-md-5">
@@ -38,20 +32,14 @@ export default class ExampleSlide extends Component {
           <div style={styles.transition}>
             <ReactWax.Slide
               active={active}
+              duration={duration}
+              delay={delay}
+              easing={easing}
               from={from}
-              to={to}
-              duration={duration}>
+              to={to}>
               <TransitionIndicator />
             </ReactWax.Slide>
           </div>
-          <NumberInput
-            label="Duration"
-            value={duration}
-            onChange={this.handleChange.bind(this, 'duration')} />
-          <NumberInput
-            label="Delay"
-            value={delay}
-            onChange={this.handleChange.bind(this, 'delay')} />
           <SelectInput
             label="From position"
             options={ReactWax.Slide.directions}
@@ -62,9 +50,9 @@ export default class ExampleSlide extends Component {
             options={ReactWax.Slide.directions}
             value={this.state.to}
             onChange={this.handleChange.bind(this, 'to')} />
-          <Button
-            label={active ? 'Deactivate' : 'Activate'}
-            onClick={this.handleToggle} />
+          <TransitionForm
+            {...this.state}
+            onChange={this.handleChange} />
         </div>
         <div className="col-md-7" style={styles.code}>
           <CodeBlock>
@@ -73,8 +61,9 @@ export default class ExampleSlide extends Component {
               `  active={${active}}\n` +
               `  from="${from}"\n` +
               `  to="${to}"\n` +
-              `  duration={${duration}}>\n` +
-              `  delay={${delay}}>\n` +
+              `  duration={${duration}}\n` +
+              `  delay={${delay}}\n` +
+              `  easing="${easing}">\n` +
               '  <ShowMeWhatYouGot />\n' +
               '</ReactWax.Slide>'
             }

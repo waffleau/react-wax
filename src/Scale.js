@@ -4,6 +4,7 @@ import Transition from './Transition'
 
 export class Scale extends PureComponent {
   static defaultProps = {
+    easing: 'easeInOut',
     from: 0,
     to: 1
   }
@@ -42,7 +43,6 @@ export class Scale extends PureComponent {
       <Transition
         {...this.props}
         style={this.getStyle()}
-        easing="easeInOut"
         fromValue={this.getFromValue()}
         toValue={this.getToValue()}>
         {children}
