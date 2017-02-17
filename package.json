@@ -1,6 +1,6 @@
 {
   "name": "react-wax",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Component library for React providing simple and efficient transitions",
   "main": "dist/react-wax.js",
   "scripts": {

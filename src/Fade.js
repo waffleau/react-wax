@@ -4,26 +4,26 @@ import Transition from './Transition'
 
 export class Fade extends PureComponent {
   static defaultProps = {
-    minOpacity: 0,
-    maxOpacity: 1
+    from: 0,
+    to: 1
   }
 
   static propTypes = {
     ...Transition.baseProps,
-    maxOpacity: PropTypes.number,
-    minOpacity: PropTypes.number
+    from: PropTypes.number,
+    to: PropTypes.number
 
   }
 
   getFromValue() {
     return {
-      opacity: this.props.minOpacity
+      opacity: this.props.from
     }
   }
 
   getToValue() {
     return {
-      opacity: this.props.maxOpacity
+      opacity: this.props.to
     }
   }
 

@@ -2,23 +2,33 @@ import React, {PropTypes, PureComponent} from 'react'
 
 import {Transition} from './Transition'
 
+const Directions = [
+  'center',
+  'down',
+  'downLeft',
+  'downRight',
+  'left',
+  'right',
+  'up',
+  'upLeft',
+  'upRight'
+]
+
 export class Slide extends PureComponent {
-  static propTypes = {
-    ...Transition.baseProps,
-    direction: PropTypes.oneOf([
-      'down',
-      'downLeft',
-      'downRight',
-      'left',
-      'right',
-      'up',
-      'upLeft',
-      'upRight'
-    ]).isRequired
+  static directions = Directions
+
+  static defaultProps = {
+    from: 'center'
   }
 
-  getDirectionTranslation() {
-    switch (this.props.direction) {
+  static propTypes = {
+    ...Transition.baseProps,
+    from: PropTypes.oneOf(Directions).isRequired,
+    to: PropTypes.oneOf(Directions).isRequired
+  }
+
+  getDirectionTranslation(direction) {
+    switch (direction) {
       case 'down': return '0,  100%, 0'
       case 'downLeft': return '-100%,  100%, 0'
       case 'downRight': return '100%,  100%, 0'
@@ -33,13 +43,13 @@ export class Slide extends PureComponent {
 
   getFromValue() {
     return {
-      transform: 'translate3d(0, 0, 0)'
+      transform: `translate3d(${this.getDirectionTranslation(this.props.from)})`
     }
   }
 
   getToValue() {
     return {
-      transform: `translate3d(${this.getDirectionTranslation()})`
+      transform: `translate3d(${this.getDirectionTranslation(this.props.to)})`
     }
   }
 

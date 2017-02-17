@@ -4,24 +4,20 @@ import Transition from './Transition'
 
 export class Scale extends PureComponent {
   static defaultProps = {
-    minX: 0,
-    minY: 0,
-    maxX: 1,
-    maxY: 1
+    from: 0,
+    to: 1
   }
 
   static propTypes = {
     ...Transition.baseProps,
-    maxX: PropTypes.number,
-    maxY: PropTypes.number,
-    minX: PropTypes.number,
-    minY: PropTypes.number
+    from: PropTypes.number,
+    to: PropTypes.number
   }
 
   getFromValue() {
-    const {minX, minY} = this.props
+    const {from} = this.props
     return {
-      transform: `scale3d(${minX}, ${minY}, 1)`
+      transform: `scale3d(${from}, ${from}, 1)`
     }
   }
 
@@ -34,9 +30,9 @@ export class Scale extends PureComponent {
   }
 
   getToValue() {
-    const {maxX, maxY} = this.props
+    const {to} = this.props
     return {
-      transform: `scale3d(${maxX}, ${maxY}, 1)`
+      transform: `scale3d(${to}, ${to}, 1)`
     }
   }
 

@@ -3,14 +3,19 @@ import React, {PropTypes, PureComponent} from 'react'
 import Transition from './Transition'
 
 export class Rotate extends PureComponent {
+  static defaultProps = {
+    from: 0
+  }
+
   static propTypes = {
     ...Transition.baseProps,
-    angle: PropTypes.number.isRequired
+    from: PropTypes.number,
+    to: PropTypes.number.isRequired
   }
 
   getFromValue() {
     return {
-      transform: 'rotate(0deg)'
+      transform: `rotate(${this.props.from}deg)`
     }
   }
 
@@ -23,9 +28,8 @@ export class Rotate extends PureComponent {
   }
 
   getToValue() {
-    const {angle} = this.props
     return {
-      transform: `rotate(${angle}deg)`
+      transform: `rotate(${this.props.to}deg)`
     }
   }
 
