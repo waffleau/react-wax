@@ -7,14 +7,14 @@ import NumberInput from './NumberInput'
 import TransitionForm from './TransitionForm'
 import TransitionIndicator from './TransitionIndicator'
 
-export default class ExampleFade extends Component {
+export default class ExampleSkew extends Component {
   state = {
     active: false,
     delay: 0,
     duration: 600,
-    easing: 'linear',
-    from: 0,
-    to: 1
+    easing: 'easeInOut',
+    from: [0, 0],
+    to: [20, 20]
   }
 
   handleChange = (name, value) => {
@@ -27,10 +27,10 @@ export default class ExampleFade extends Component {
       <div className="row">
         <div className="col-md-5">
           <h1 className="text-center">
-            {'Fade'}
+            {'Skew'}
           </h1>
           <div style={styles.transition}>
-            <ReactWax.Fade
+            <ReactWax.Skew
               active={active}
               duration={duration}
               delay={delay}
@@ -38,14 +38,14 @@ export default class ExampleFade extends Component {
               from={from}
               to={to}>
               <TransitionIndicator />
-            </ReactWax.Fade>
+            </ReactWax.Skew>
           </div>
           <NumberInput
-            label="From opacity"
+            label="From scale"
             value={from}
             onChange={this.handleChange.bind(this, 'from')} />
           <NumberInput
-            label="To opacity"
+            label="To scale"
             value={to}
             onChange={this.handleChange.bind(this, 'to')} />
           <TransitionForm
@@ -55,15 +55,15 @@ export default class ExampleFade extends Component {
         <div className="col-md-7" style={styles.code}>
           <CodeBlock>
             {
-              '<ReactWax.Fade\n' +
+              '<ReactWax.Skew\n' +
               `  active={${active}}\n` +
-              `  from={${from}}\n` +
-              `  to={${to}}\n` +
+              `  from={[${from}]}\n` +
+              `  to={[${to}]}\n` +
               `  duration={${duration}}\n` +
+              `  delay={${delay}}\n` +
               `  easing="${easing}">\n` +
-              `  delay={${delay}}>\n` +
               '  <ShowMeWhatYouGot />\n' +
-              '</ReactWax.Fade>'
+              '</ReactWax.Skew>'
             }
           </CodeBlock>
         </div>

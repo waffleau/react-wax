@@ -60,7 +60,7 @@ export default class ExampleFade extends Component {
               `  from={${from}}\n` +
               `  to={${to}}\n` +
               `  duration={${duration}}\n` +
-              `  easing={${easing}}\n` +
+              `  easing="${easing}">\n` +
               `  delay={${delay}}>\n` +
               '  <ShowMeWhatYouGot />\n' +
               '</ReactWax.Rotate>'

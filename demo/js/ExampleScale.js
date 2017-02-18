@@ -13,8 +13,8 @@ export default class ExampleFade extends Component {
     delay: 0,
     duration: 600,
     easing: 'easeInOut',
-    from: 0,
-    to: 1
+    from: [0, 0],
+    to: [1, 1]
   }
 
   handleChange = (name, value) => {
@@ -57,11 +57,11 @@ export default class ExampleFade extends Component {
             {
               '<ReactWax.Scale\n' +
               `  active={${active}}\n` +
-              `  from={${from}}\n` +
-              `  to={${to}}\n` +
+              `  from={[${from}]}\n` +
+              `  to={[${to}]}\n` +
               `  duration={${duration}}\n` +
               `  delay={${delay}}\n` +
-              `  easing={${easing}}>\n` +
+              `  easing="${easing}">\n` +
               '  <ShowMeWhatYouGot />\n' +
               '</ReactWax.Rotate>'
             }

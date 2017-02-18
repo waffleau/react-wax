@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import ExampleFade from './ExampleFade'
 import ExampleRotate from './ExampleRotate'
 import ExampleScale from './ExampleScale'
+import ExampleSkew from './ExampleSkew'
 import ExampleSlide from './ExampleSlide'
 
 export default class ReactRoot extends Component {
@@ -13,13 +14,16 @@ export default class ReactRoot extends Component {
           <ExampleFade />
         </div>
         <div style={styles.example}>
-          <ExampleSlide />
+          <ExampleRotate />
         </div>
         <div style={styles.example}>
           <ExampleScale />
         </div>
         <div style={styles.example}>
-          <ExampleRotate />
+          <ExampleSkew />
+        </div>
+        <div style={styles.example}>
+          <ExampleSlide />
         </div>
       </div>
     )

@@ -2,23 +2,22 @@ import React, {PropTypes, PureComponent} from 'react'
 
 import Transition from './Transition'
 
-export class Scale extends PureComponent {
+export class Skew extends PureComponent {
   static defaultProps = {
     easing: 'easeInOut',
-    from: [0, 0],
-    to: [1, 1]
+    from: [0, 0]
   }
 
   static propTypes = {
     ...Transition.baseProps,
     from: PropTypes.arrayOf(PropTypes.number),
-    to: PropTypes.arrayOf(PropTypes.number)
+    to: PropTypes.arrayOf(PropTypes.number).isRequired
   }
 
   getFromValue() {
     const {from} = this.props
     return {
-      transform: `scale3d(${from[0]}, ${from[1]}, 1)`
+      transform: `skew(${from[0]}deg, ${from[1]}deg)`
     }
   }
 
@@ -33,7 +32,7 @@ export class Scale extends PureComponent {
   getToValue() {
     const {to} = this.props
     return {
-      transform: `scale3d(${to[0]}, ${to[1]}, 1)`
+      transform: `skew(${to[0]}deg, ${to[1]}deg)`
     }
   }
 
@@ -51,4 +50,4 @@ export class Scale extends PureComponent {
   }
 }
 
-export default Scale
+export default Skew

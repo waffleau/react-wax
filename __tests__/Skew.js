@@ -1,71 +1,65 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Scale from '../src/Scale'
+import Skew from '../src/Skew'
 
 test('has no scale when inactive', () => {
   const tree = renderer.create(
-    <Scale active={false}>
-      {'Children'}
-    </Scale>
-  ).toJSON()
-
-  expect(tree).toMatchSnapshot()
-})
-
-test('default scale of 1 when active', () => {
-  const tree = renderer.create(
-    <Scale active>
-      {'Children'}
-    </Scale>
-  ).toJSON()
-
-  expect(tree).toMatchSnapshot()
-})
-
-test('can specify a minimum x scale', () => {
-  const tree = renderer.create(
-    <Scale
+    <Skew
       active={false}
-      from={[.1, .1]}>
+      to={[10, 10]}>
       {'Children'}
-    </Scale>
+    </Skew>
   ).toJSON()
 
   expect(tree).toMatchSnapshot()
 })
 
-test('can specify a minimum y scale', () => {
+test('can specify a minimum x skew', () => {
   const tree = renderer.create(
-    <Scale
+    <Skew
       active={false}
-      from={[.1, .1]}>
+      from={[.1, .1]}
+      to={[10, 10]}>
       {'Children'}
-    </Scale>
+    </Skew>
   ).toJSON()
 
   expect(tree).toMatchSnapshot()
 })
 
-test('can specify a maximum x scale', () => {
+test('can specify a minimum y skey', () => {
   const tree = renderer.create(
-    <Scale
+    <Skew
+      active={false}
+      from={[.1, .1]}
+      to={[10, 10]}>
+      {'Children'}
+    </Skew>
+  ).toJSON()
+
+  expect(tree).toMatchSnapshot()
+})
+
+test('can specify a maximum x skew', () => {
+  const tree = renderer.create(
+    <Skew
       active
       to={[1.1, 1.1]}>
       {'Children'}
-    </Scale>
+    </Skew>
   ).toJSON()
 
   expect(tree).toMatchSnapshot()
 })
 
-test('can specify a maximum y scale', () => {
+test('can specify a maximum y skew', () => {
   const tree = renderer.create(
-    <Scale
+    <Skew
       active
-      to={[1.1, 1.1]}>
+      to={[10, 10]}>
       {'Children'}
-    </Scale>
+    </Skew>
   ).toJSON()
 
   expect(tree).toMatchSnapshot()

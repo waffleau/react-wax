@@ -1,8 +1,8 @@
-exports[`test can specify a maximum x scale 1`] = `
+exports[`test can specify a maximum x skew 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(1.1, 1.1, 1)",
+      "transform": "skew(1.1deg, 1.1deg)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
@@ -11,11 +11,11 @@ exports[`test can specify a maximum x scale 1`] = `
 </div>
 `;
 
-exports[`test can specify a maximum y scale 1`] = `
+exports[`test can specify a maximum y skew 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(1.1, 1.1, 1)",
+      "transform": "skew(10deg, 10deg)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
@@ -24,11 +24,11 @@ exports[`test can specify a maximum y scale 1`] = `
 </div>
 `;
 
-exports[`test can specify a minimum x scale 1`] = `
+exports[`test can specify a minimum x skew 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(0.1, 0.1, 1)",
+      "transform": "skew(0.1deg, 0.1deg)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
@@ -37,24 +37,11 @@ exports[`test can specify a minimum x scale 1`] = `
 </div>
 `;
 
-exports[`test can specify a minimum y scale 1`] = `
+exports[`test can specify a minimum y skey 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(0.1, 0.1, 1)",
-      "transformOrigin": "center center",
-      "transition": "transform 600ms ease-in-out 0ms",
-    }
-  }>
-  Children
-</div>
-`;
-
-exports[`test default scale of 1 when active 1`] = `
-<div
-  style={
-    Object {
-      "transform": "scale3d(1, 1, 1)",
+      "transform": "skew(0.1deg, 0.1deg)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }
@@ -67,7 +54,7 @@ exports[`test has no scale when inactive 1`] = `
 <div
   style={
     Object {
-      "transform": "scale3d(0, 0, 1)",
+      "transform": "skew(0deg, 0deg)",
       "transformOrigin": "center center",
       "transition": "transform 600ms ease-in-out 0ms",
     }

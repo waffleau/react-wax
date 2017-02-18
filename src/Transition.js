@@ -39,8 +39,8 @@ export class Transition extends PureComponent {
     return EasingTypes[easing] || timing || EasingTypes.linear
   }
 
-  getProperty() {
-    return Object.keys(this.props.fromValue)[0]
+  getProperties() {
+    return Object.keys(this.props.fromValue)
   }
 
   getStyle() {
@@ -55,8 +55,13 @@ export class Transition extends PureComponent {
 
   getTransition() {
     const {delay, duration} = this.props
+    const easing = this.getEasing()
 
-    return `${this.getProperty()} ${duration}ms ${this.getEasing()} ${delay}ms`
+    const transition = this.getProperties().map((property) => {
+      return `${property} ${duration}ms ${easing} ${delay}ms`
+    })
+
+    return transition.join(',')
   }
 
   render() {
