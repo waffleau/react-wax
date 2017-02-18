@@ -2,6 +2,11 @@ import React, {PropTypes, PureComponent} from 'react'
 
 import Transition from './Transition'
 
+const NumberOrArrayOfNumbers = PropTypes.oneOfType([
+  PropTypes.number,
+  PropTypes.arrayOf(PropTypes.number)
+])
+
 export class Skew extends PureComponent {
   static defaultProps = {
     easing: 'easeInOut',
@@ -10,12 +15,12 @@ export class Skew extends PureComponent {
 
   static propTypes = {
     ...Transition.baseProps,
-    from: PropTypes.arrayOf(PropTypes.number),
-    to: PropTypes.arrayOf(PropTypes.number).isRequired
+    from: NumberOrArrayOfNumbers,
+    to: NumberOrArrayOfNumbers.isRequired
   }
 
   getFromValue() {
-    const {from} = this.props
+    const from = this.valueAsArray(this.props.from)
     return {
       transform: `skew(${from[0]}deg, ${from[1]}deg)`
     }
@@ -30,10 +35,16 @@ export class Skew extends PureComponent {
   }
 
   getToValue() {
-    const {to} = this.props
+    const to = this.valueAsArray(this.props.to)
     return {
       transform: `skew(${to[0]}deg, ${to[1]}deg)`
     }
+  }
+
+  valueAsArray(value) {
+    return (typeof value === 'number')
+      ? [value, value]
+      : value
   }
 
   render() {

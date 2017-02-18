@@ -13,8 +13,8 @@ export default class ExampleSkew extends Component {
     delay: 0,
     duration: 600,
     easing: 'easeInOut',
-    from: [0, 0],
-    to: [20, 20]
+    from: 0,
+    to: 20
   }
 
   handleChange = (name, value) => {
@@ -57,8 +57,8 @@ export default class ExampleSkew extends Component {
             {
               '<ReactWax.Skew\n' +
               `  active={${active}}\n` +
-              `  from={[${from}]}\n` +
-              `  to={[${to}]}\n` +
+              `  from={${from}}\n` +
+              `  to={${to}}\n` +
               `  duration={${duration}}\n` +
               `  delay={${delay}}\n` +
               `  easing="${easing}">\n` +

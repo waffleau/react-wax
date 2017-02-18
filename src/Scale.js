@@ -2,6 +2,11 @@ import React, {PropTypes, PureComponent} from 'react'
 
 import Transition from './Transition'
 
+const NumberOrArrayOfNumbers = PropTypes.oneOfType([
+  PropTypes.number,
+  PropTypes.arrayOf(PropTypes.number)
+])
+
 export class Scale extends PureComponent {
   static defaultProps = {
     easing: 'easeInOut',
@@ -11,12 +16,12 @@ export class Scale extends PureComponent {
 
   static propTypes = {
     ...Transition.baseProps,
-    from: PropTypes.arrayOf(PropTypes.number),
-    to: PropTypes.arrayOf(PropTypes.number)
+    from: NumberOrArrayOfNumbers,
+    to: NumberOrArrayOfNumbers
   }
 
   getFromValue() {
-    const {from} = this.props
+    const from = this.valueAsArray(this.props.from)
     return {
       transform: `scale3d(${from[0]}, ${from[1]}, 1)`
     }
@@ -31,10 +36,16 @@ export class Scale extends PureComponent {
   }
 
   getToValue() {
-    const {to} = this.props
+    const to = this.valueAsArray(this.props.to)
     return {
       transform: `scale3d(${to[0]}, ${to[1]}, 1)`
     }
+  }
+
+  valueAsArray(value) {
+    return (typeof value === 'number')
+      ? [value, value]
+      : value
   }
 
   render() {
