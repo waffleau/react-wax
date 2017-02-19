@@ -1,10 +1,10 @@
 import React, {Component, PropTypes} from 'react'
 
-import ReactWax from '../../src'
+import ReactWax from '../../../src'
 
-import Button from './Button'
-import NumberInput from './NumberInput'
-import SelectInput from './SelectInput'
+import Button from '../Controls/Button'
+import NumberInput from '../Controls/NumberInput'
+import SelectInput from '../Controls/SelectInput'
 
 export default class TransitionForm extends Component {
   static propTypes = {

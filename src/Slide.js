@@ -19,13 +19,14 @@ export class Slide extends PureComponent {
 
   static defaultProps = {
     easing: 'easeInOut',
-    from: 'center'
+    from: 'center',
+    to: 'center'
   }
 
   static propTypes = {
     ...Transition.baseProps,
-    from: PropTypes.oneOf(Directions).isRequired,
-    to: PropTypes.oneOf(Directions).isRequired
+    from: PropTypes.oneOf(Directions),
+    to: PropTypes.oneOf(Directions)
   }
 
   getDirectionTranslation(direction) {

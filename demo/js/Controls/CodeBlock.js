@@ -16,5 +16,7 @@ export default class CodeBlock extends Component {
 }
 
 const styles = {
+  backgroundColor: '#eee',
+  borderRadius: 6,
   padding: 20
 }
