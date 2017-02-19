@@ -13,14 +13,14 @@ const BaseProps = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.any,
   delay: PropTypes.number,
-  delayActive: PropTypes.number,
-  delayInactive: PropTypes.number,
+  delayEnter: PropTypes.number,
+  delayLeave: PropTypes.number,
   duration: PropTypes.number,
-  durationActive: PropTypes.number,
-  durationInactive: PropTypes.number,
+  durationEnter: PropTypes.number,
+  durationLeave: PropTypes.number,
   easing: EasingPropTypes,
-  easingActive: EasingPropTypes,
-  easingInactive: EasingPropTypes,
+  easingEnter: EasingPropTypes,
+  easingLeave: EasingPropTypes,
   style: PropTypes.object,
   timing: PropTypes.string
 }
@@ -42,20 +42,20 @@ export class Transition extends PureComponent {
     toValue: PropTypes.object.isRequired
   }
 
-  getDelayActive() {
-    return this.props.delayActive || this.props.delay
+  getDelayEnter() {
+    return this.props.delayEnter || this.props.delay
   }
 
-  getDelayInactive() {
-    return this.props.delayInactive || this.props.delay
+  getDelayLeave() {
+    return this.props.delayLeave || this.props.delay
   }
 
-  getDurationActive() {
-    return this.props.durationActive || this.props.duration
+  getDurationEnter() {
+    return this.props.durationEnter || this.props.duration
   }
 
-  getDurationInactive() {
-    return this.props.durationInactive || this.props.duration
+  getDurationLeave() {
+    return this.props.durationLeave || this.props.duration
   }
 
   getEasing() {
@@ -63,12 +63,12 @@ export class Transition extends PureComponent {
     return EasingTypes[easing] || timing || EasingTypes.linear
   }
 
-  getEasingActive() {
-    return this.props.easingActive || this.getEasing()
+  getEasingEnter() {
+    return this.props.easingEnter || this.getEasing()
   }
 
-  getEasingInactive() {
-    return this.props.easingInactive || this.getEasing()
+  getEasingLeave() {
+    return this.props.easingLeave || this.getEasing()
   }
 
   getProperties() {
@@ -87,16 +87,16 @@ export class Transition extends PureComponent {
 
   getTransition() {
     return this.props.active
-      ? this.getTransitionActive()
-      : this.getTransitionInactive()
+      ? this.getTransitionEnter()
+      : this.getTransitionLeave()
   }
 
-  getTransitionActive() {
-    return this.transitionCSS(this.getDurationActive(), this.getEasingActive(), this.getDelayActive())
+  getTransitionEnter() {
+    return this.transitionCSS(this.getDurationEnter(), this.getEasingEnter(), this.getDelayEnter())
   }
 
-  getTransitionInactive() {
-    return this.transitionCSS(this.getDurationInactive(), this.getEasingInactive(), this.getDelayInactive())
+  getTransitionLeave() {
+    return this.transitionCSS(this.getDurationLeave(), this.getEasingLeave(), this.getDelayLeave())
   }
 
   transitionCSS(duration, easing, delay) {
