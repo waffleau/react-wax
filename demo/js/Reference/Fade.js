@@ -26,8 +26,10 @@ export default class Fade extends Component {
     return (
       <div style={styles.container} id="fade">
         <h3>{'Fade'}</h3>
+        <p>{'Transitions an elements opacity, allowing for a fade in-out effect.'}</p>
         <div className="row">
           <div className="col-lg-6">
+
             <div style={styles.transition}>
               <ReactWax.Fade
                 active={active}

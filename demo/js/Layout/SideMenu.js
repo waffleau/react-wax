@@ -27,12 +27,12 @@ export default class SideMenu extends Component {
           {this.renderLink('Scale', '#scale')}
           {this.renderLink('Skew', '#skew')}
           {this.renderLink('Slide', '#slide')}
+          {this.renderLink('Transition', '#transition')}
         </ul>
         <h5>{'Advanced Usage'}</h5>
         <ul>
           {this.renderLink('Composition', '#composition')}
           {this.renderLink('Sequencing', '#sequencing')}
-          {this.renderLink('Custom Transitions', '#custom-transitions')}
         </ul>
       </div>
     )

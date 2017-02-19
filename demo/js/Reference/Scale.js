@@ -26,6 +26,7 @@ export default class ExampleFade extends Component {
     return (
       <div style={styles.container} id="scale">
         <h3>{'Scale'}</h3>
+        <p>{'Scales children between two sizes.'}</p>
         <div className="row">
           <div className="col-lg-6">
             <div style={styles.transition}>

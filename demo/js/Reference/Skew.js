@@ -26,6 +26,7 @@ export default class ExampleSkew extends Component {
     return (
       <div style={styles.container} id="skew">
         <h3>{'Skew'}</h3>
+        <p>{'Applies a skew to the x and y properties.'}</p>
         <div className="row">
           <div className="col-lg-6">
             <div style={styles.transition}>

@@ -26,6 +26,7 @@ export default class ExampleSlide extends Component {
     return (
       <div style={styles.container} id="slide">
         <h3>{'Slide'}</h3>
+        <p>{'Slides children from one direction to another direction.'}</p>
         <div className="row">
           <div className="col-lg-6">
             <div style={styles.transition}>

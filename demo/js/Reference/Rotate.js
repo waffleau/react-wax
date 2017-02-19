@@ -26,6 +26,7 @@ export default class ExampleFade extends Component {
     return (
       <div style={styles.container} id="rotate">
         <h3>{'Rotate'}</h3>
+        <p>{'Rotates childreb to the `to` angle around the center point.'}</p>
         <div className="row">
           <div className="col-lg-6">
             <div style={styles.transition}>

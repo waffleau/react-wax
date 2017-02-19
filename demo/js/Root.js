@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import Layout from './Layout/Layout'
 
+import CodeBlock from './Controls/CodeBlock'
 import Motivation from './Sections/Motivation'
 import Installation from './Sections/Installation'
 import Usage from './Sections/Usage'
@@ -23,6 +24,17 @@ export default class Root extends Component {
         <Installation />
         <Usage />
         <h1>{'API Reference'}</h1>
+        <p>{'There are some props which can be used on all components:'}</p>
+        <CodeBlock>
+          {
+            'duration: number (600) - how long the transition runs for\n' +
+            'delay: number (0) - offset the start and end of a transition\n' +
+            'easing: string (\'linear\') - predefined transition timing curve\n' +
+            '        options: [linear, easeIn, easeOut, easeInOut]\n' +
+            'style: object (null) - styles which will be applied to the transition container\n' +
+            'timing: string (null) - CSS timing function (escape hatch) - https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp\n'
+          }
+        </CodeBlock>
         <ReferenceFade />
         <ReferenceRotate />
         <ReferenceScale />

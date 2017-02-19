@@ -58,6 +58,78 @@ exports[`test can have a custom easing 1`] = `
 </div>
 `;
 
+exports[`test can have a custom entry delay 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear 2222ms",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom entry duration 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear 0ms",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom entry easing 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear 0ms",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom exit delay 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear 0ms",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom exit duration 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear 0ms",
+    }
+  }>
+  Children
+</div>
+`;
+
+exports[`test can have a custom exit easing 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "transition": "backgroundColor 600ms linear 0ms",
+    }
+  }>
+  Children
+</div>
+`;
+
 exports[`test can have a custom style 1`] = `
 <div
   style={
