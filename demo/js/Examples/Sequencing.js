@@ -23,9 +23,9 @@ export default class Sequencing extends Component {
         <div className="row">
           <div className="col-lg-3">
             <div style={styles.transition}>
-              <ReactWax.Fade active={active}>
+              <ReactWax.Fade active={active} delayInactive={1200}>
                 <ReactWax.Slide active={active} delay={600} to="right">
-                  <ReactWax.Scale active={active} delay={1200} to={1.5}>
+                  <ReactWax.Scale active={active} delayActive={1200} from={.5} to={1}>
                     <TransitionIndicator />
                   </ReactWax.Scale>
                 </ReactWax.Slide>
@@ -38,9 +38,9 @@ export default class Sequencing extends Component {
           <div className="col-lg-9">
             <CodeBlock>
               {
-                `<ReactWax.Fade active={${active}}>\n` +
+                `<ReactWax.Fade active={${active}} delayInactive={1200}>\n` +
                 `  <ReactWax.Slide active={${active}} delay={600} to="right">\n` +
-                `    <ReactWax.Scale active={${active}} delay={1200} to={1.5}>\n` +
+                `    <ReactWax.Scale active={${active}} delayActive={1200} from={.5} to={1}>\n` +
                 '      <ShowMeWhatYouGot />\n' +
                 '    </ReactWax.Scale>\n' +
                 '  </ReactWax.Slide>\n' +
