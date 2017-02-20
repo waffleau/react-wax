@@ -7,7 +7,7 @@ import NumberInput from '../Controls/NumberInput'
 import TransitionForm from '../Controls/TransitionForm'
 import TransitionIndicator from '../Controls/TransitionIndicator'
 
-export default class ExampleFade extends Component {
+export default class Scale extends Component {
   state = {
     active: false,
     delay: 0,

@@ -7,7 +7,7 @@ import SelectInput from '../Controls/SelectInput'
 import TransitionForm from '../Controls/TransitionForm'
 import TransitionIndicator from '../Controls/TransitionIndicator'
 
-export default class ExampleSlide extends Component {
+export default class Slide extends Component {
   state = {
     active: false,
     delay: 0,

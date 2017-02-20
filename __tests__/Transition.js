@@ -7,8 +7,8 @@ test('can be inactive', () => {
   const tree = renderer.create(
     <Transition
       active={false}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -20,8 +20,8 @@ test('can be active', () => {
   const tree = renderer.create(
     <Transition
       active
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -34,8 +34,8 @@ test('can have a custom delay', () => {
     <Transition
       active
       delay={2222}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -48,8 +48,8 @@ test('can have a custom entry delay', () => {
     <Transition
       active
       delayEnter={2222}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -62,8 +62,8 @@ test('can have a custom exit delay', () => {
     <Transition
       active
       delayLeave={2222}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -76,8 +76,8 @@ test('can have a custom duration', () => {
     <Transition
       active
       duration={9999}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -90,8 +90,8 @@ test('can have a custom entry duration', () => {
     <Transition
       active
       durationEntry={9999}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -104,8 +104,8 @@ test('can have a custom exit duration', () => {
     <Transition
       active
       durationLeave={9999}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -118,8 +118,8 @@ test('can have a custom easing', () => {
     <Transition
       active
       easing="easeInOut"
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -131,8 +131,8 @@ test('can have a custom easing', () => {
     <Transition
       active
       easing="easeInOut"
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -145,8 +145,8 @@ test('accepts an array of numbers describing easing', () => {
     <Transition
       active
       easing={[.1, .3, .7, .9]}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -159,8 +159,8 @@ test('can have a custom entry easing', () => {
     <Transition
       active
       easingEntry="easeInOut"
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -173,8 +173,8 @@ test('can have a custom exit easing', () => {
     <Transition
       active
       easingLeave="easeInOut"
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()
@@ -187,8 +187,8 @@ test('can have a custom style', () => {
     <Transition
       active
       style={{ color: 'yellow' }}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
+      from={{ backgroundColor: 'red' }}
+      to={{ backgroundColor: 'blue' }}>
       {'Children'}
     </Transition>
   ).toJSON()

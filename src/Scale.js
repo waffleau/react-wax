@@ -54,8 +54,8 @@ export class Scale extends PureComponent {
       <Transition
         {...this.props}
         style={this.getStyle()}
-        fromValue={this.getFromValue()}
-        toValue={this.getToValue()}>
+        from={this.getFromValue()}
+        to={this.getToValue()}>
         {children}
       </Transition>
     )

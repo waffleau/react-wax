@@ -41,8 +41,8 @@ export class Transition extends PureComponent {
 
   static propTypes = {
     ...BaseProps,
-    fromValue: PropTypes.object.isRequired,
-    toValue: PropTypes.object.isRequired
+    from: PropTypes.object.isRequired,
+    to: PropTypes.object.isRequired
   }
 
   getDelayEnter() {
@@ -80,15 +80,15 @@ export class Transition extends PureComponent {
   }
 
   getProperties() {
-    return Object.keys(this.props.fromValue)
+    return Object.keys(this.props.from)
   }
 
   getStyle() {
-    const {active, fromValue, style, toValue} = this.props
+    const {active, from, style, to} = this.props
 
     return {
       transition: this.getTransition(),
-      ...(active ? toValue : fromValue),
+      ...(active ? to : from),
       ...style
     }
   }

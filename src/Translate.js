@@ -1,37 +1,33 @@
 import React, {PropTypes, PureComponent} from 'react'
 
-import Transition from './Transition'
+import {Transition} from './Transition'
 
-export class Rotate extends PureComponent {
+export class Translate extends PureComponent {
   static defaultProps = {
     easing: 'easeInOut',
-    from: 0
+    from: [0, 0]
   }
 
   static propTypes = {
     ...Transition.baseProps,
-    from: PropTypes.number,
-    to: PropTypes.number.isRequired
+    from: PropTypes.arrayOf(PropTypes.number),
+    to: PropTypes.arrayOf(PropTypes.number).isRequired
   }
 
   getFromValue() {
     return {
-      transform: `rotate(${this.props.from}deg)`
-    }
-  }
-
-  getStyle() {
-    const {style} = this.props
-    return {
-      transformOrigin: 'center center',
-      ...style
+      transform: this.interpolateTransform(this.props.from)
     }
   }
 
   getToValue() {
     return {
-      transform: `rotate(${this.props.to}deg)`
+      transform: this.interpolateTransform(this.props.to)
     }
+  }
+
+  interpolateTransform(values) {
+    return `translate3d(${values[0]}%, ${values[1]}%, 0)`
   }
 
   render() {
@@ -39,7 +35,6 @@ export class Rotate extends PureComponent {
     return (
       <Transition
         {...this.props}
-        style={this.getStyle()}
         from={this.getFromValue()}
         to={this.getToValue()}>
         {children}
@@ -48,4 +43,4 @@ export class Rotate extends PureComponent {
   }
 }
 
-export default Rotate
+export default Translate

@@ -7,14 +7,16 @@ import NumberInput from '../Controls/NumberInput'
 import TransitionForm from '../Controls/TransitionForm'
 import TransitionIndicator from '../Controls/TransitionIndicator'
 
-export default class Skew extends Component {
+export default class Translate extends Component {
   state = {
     active: false,
     delay: 0,
     duration: 600,
     easing: 'easeInOut',
-    from: 0,
-    to: 20
+    fromX: 0,
+    fromY: 0,
+    toX: 100,
+    toY: 0
   }
 
   handleChange = (name, value) => {
@@ -22,32 +24,40 @@ export default class Skew extends Component {
   }
 
   render() {
-    const {active, delay, duration, easing, from, to} = this.state
+    const {active, delay, duration, easing, fromX, fromY, toX, toY} = this.state
     return (
       <div style={styles.container}>
-        <h3>{'Skew'}</h3>
-        <p>{'Applies a skew to the x and y properties.'}</p>
+        <h3>{'Translate'}</h3>
+        <p>{'Translates children from one position to another.'}</p>
         <div className="row">
           <div className="col-lg-6">
             <div style={styles.transition}>
-              <ReactWax.Skew
+              <ReactWax.Translate
                 active={active}
                 duration={duration}
                 delay={delay}
                 easing={easing}
-                from={from}
-                to={to}>
+                from={[fromX, fromY]}
+                to={[toX, toY]}>
                 <TransitionIndicator />
-              </ReactWax.Skew>
+              </ReactWax.Translate>
             </div>
             <NumberInput
-              label="From scale"
-              value={from}
-              onChange={this.handleChange.bind(this, 'from')} />
+              label="From X"
+              value={fromX}
+              onChange={this.handleChange.bind(this, 'fromX')} />
             <NumberInput
-              label="To scale"
-              value={to}
-              onChange={this.handleChange.bind(this, 'to')} />
+              label="From Y"
+              value={fromY}
+              onChange={this.handleChange.bind(this, 'fromY')} />
+            <NumberInput
+              label="To X"
+              value={toX}
+              onChange={this.handleChange.bind(this, 'toX')} />
+            <NumberInput
+              label="To Y"
+              value={toY}
+              onChange={this.handleChange.bind(this, 'toY')} />
             <TransitionForm
               {...this.state}
               onChange={this.handleChange} />
@@ -57,29 +67,29 @@ export default class Skew extends Component {
               <h4>{'Props'}</h4>
               <div className="prop">
                 <div><strong>{'from (optional)'}</strong></div>
-                <div><em>{'Type:'}</em>{' Number or Array[2]'}</div>
-                <div><em>{'Default:'}</em>{' 0'}</div>
-                <p>{'Target skew when active == false. Accepts a single value, or an array of [x, y] values.'}</p>
+                <div><em>{'Type:'}</em>{' Array[2]'}</div>
+                <div><em>{'Default:'}</em>{' [0, 0]'}</div>
+                <p>{'Target translation when active == false. Accepts an array of [x, y] values.'}</p>
               </div>
               <div className="prop">
-                <div><strong>{'to (optional)'}</strong></div>
-                <div><em>{'Type:'}</em>{' Number or Array[2]'}</div>
-                <div><em>{'Default:'}</em>{' 1'}</div>
-                <p>{'Target skew when active == true. Accepts a single value, or an array of [x, y] values.'}</p>
+                <div><strong>{'to'}</strong></div>
+                <div><em>{'Type:'}</em>{' Array[2]'}</div>
+                <div><em>{'Default:'}</em>{' undefined'}</div>
+                <p>{'Target translation when active == true. Accepts an array of [x, y] values.'}</p>
               </div>
             </div>
             <CodeBlock>
               <h4>{'Example'}</h4>
               {
-                '<ReactWax.Skew\n' +
+                '<ReactWax.Scale\n' +
                 `  active={${active}}\n` +
-                `  from={${from}}\n` +
-                `  to={${to}}\n` +
+                `  from={[${fromX}, ${fromY}]}\n` +
+                `  to={[${toX}, ${toY}]}\n` +
                 `  duration={${duration}}\n` +
                 `  delay={${delay}}\n` +
                 `  easing="${easing}">\n` +
                 '  <ShowMeWhatYouGot />\n' +
-                '</ReactWax.Skew>'
+                '</ReactWax.Rotate>'
               }
             </CodeBlock>
           </div>

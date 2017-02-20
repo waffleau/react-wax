@@ -32,8 +32,8 @@ export class Fade extends PureComponent {
     return (
       <Transition
         {...this.props}
-        fromValue={this.getFromValue()}
-        toValue={this.getToValue()}>
+        from={this.getFromValue()}
+        to={this.getToValue()}>
         {children}
       </Transition>
     )

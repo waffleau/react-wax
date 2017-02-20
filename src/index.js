@@ -4,6 +4,7 @@ import Scale from './Scale'
 import Skew from './Skew'
 import Slide from './Slide'
 import Transition from './Transition'
+import Translate from './Translate'
 
 export default {
   Fade,
@@ -11,5 +12,6 @@ export default {
   Scale,
   Skew,
   Slide,
-  Transition
+  Transition,
+  Translate
 }
