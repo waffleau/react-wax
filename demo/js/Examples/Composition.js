@@ -18,8 +18,14 @@ export default class Composition extends Component {
   render() {
     const {active} = this.state
     return (
-      <div style={styles.container} id="composition">
+      <div style={styles.container}>
         <h3>{'Composition'}</h3>
+        <p>
+          {
+            'Wax allows for animations to be composed, so you can build up complex ' +
+            'animations using simple steps.'
+          }
+        </p>
         <div className="row">
           <div className="col-lg-3">
             <div style={styles.transition}>

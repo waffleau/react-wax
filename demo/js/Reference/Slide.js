@@ -24,7 +24,7 @@ export default class ExampleSlide extends Component {
   render() {
     const {active, delay, duration, easing, from, to} = this.state
     return (
-      <div style={styles.container} id="slide">
+      <div style={styles.container}>
         <h3>{'Slide'}</h3>
         <p>{'Slides children from one direction to another direction.'}</p>
         <div className="row">
@@ -55,7 +55,25 @@ export default class ExampleSlide extends Component {
               onChange={this.handleChange} />
           </div>
           <div className="col-lg-6">
+            <div className="propgroup">
+              <h4>{'Props'}</h4>
+              <div className="prop">
+                <div><strong>{'from (optional)'}</strong></div>
+                <div><em>{'Type:'}</em>{' String (Enum)'}</div>
+                <div><em>{'Default:'}</em>{' center'}</div>
+                <div><em>{'Options:'}</em>{' center | down | downLeft | downRight | left | right | up | upLeft | upRight'}</div>
+                <p>{'Target position when active == false'}</p>
+              </div>
+              <div className="prop">
+                <div><strong>{'to'}</strong></div>
+                <div><em>{'Type:'}</em>{' String (Enum)'}</div>
+                <div><em>{'Default:'}</em>{' undefined'}</div>
+                <div><em>{'Options:'}</em>{' center | down | downLeft | downRight | left | right | up | upLeft | upRight'}</div>
+                <p>{'Target position when active == true'}</p>
+              </div>
+            </div>
             <CodeBlock>
+              <h4>{'Example'}</h4>
               {
                 '<ReactWax.Slide\n' +
                 `  active={${active}}\n` +
@@ -85,7 +103,8 @@ const styles = {
   transition: {
     backgroundColor: '#ddd',
     margin: '0 auto',
-    marginBottom: 20,
+    marginBottom: 60,
+    marginTop: 60,
     height: 100,
     width: 100
   }

@@ -18,8 +18,17 @@ export default class Sequencing extends Component {
   render() {
     const {active} = this.state
     return (
-      <div style={styles.container} id="sequencing">
+      <div style={styles.container}>
         <h3>{'Sequencing'}</h3>
+        <p>
+          {
+            'More complex compositions can also utilise sequencing, to create multi-step animations. ' +
+            'You can control the timing for each step (in either direction). In the following example, ' +
+            'we\'re appling a Fade, then a slide after 600ms, and finally a scale after 1200ms. These delays ' +
+            'are reversed when the active state is changed.'
+          }
+        </p>
+
         <div className="row">
           <div className="col-lg-3">
             <div style={styles.transition}>

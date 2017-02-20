@@ -1,0 +1,44 @@
+.sidemenu {
+  background-color: #eee;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 250px;
+}
+
+.content-wrap {
+  padding: 40px;
+  padding-left: 290px;
+  padding-right: 40px;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.code {
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.propgroup {
+  background-color: #eee;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.propgroup p {
+  margin-bottom: 0;
+}
+
+.prop {
+  margin-bottom: 20px;
+}
+
+.prop:last-child {
+  margin-bottom: 0;
+}

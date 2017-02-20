@@ -7,17 +7,191 @@
     <title>React Wax</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-    <style>
-      body {
-        padding: 2rem;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
-    <div id="root">
-      <h1>Example loading...</h1>
+    <div>
+      <nav class="sidemenu">
+        <h2>React Wax</h2>
+        <hr />
+        <strong>Introduction</strong>
+        <ul>
+          <li><a href="#motivation">Motivation</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#basic-usage">Basic Usage</a></li>
+        </ul>
+        <strong>API Reference</strong>
+        <ul>
+          <li><a href="#proptypes">Common PropTypes</a></li>
+          <li><a href="#reference-fade">Fade</a></li>
+          <li><a href="#reference-rotate">Rotate</a></li>
+          <li><a href="#reference-scale">Scale</a></li>
+          <li><a href="#reference-skew">Skew</a></li>
+          <li><a href="#reference-slide">Slide</a></li>
+          <li><a href="#reference-transition">Transition</a></li>
+        </ul>
+        <strong>Advanced Usage</strong>
+        <ul>
+          <li><a href="#example-composition">Composition</a></li>
+          <li><a href="#example-sequencing">Sequencing</a></li>
+        </ul>
+      </nav>
+      <div class="content-wrap">
+        <div class="section" id="motivation">
+          <h1>Motivation</h1>
+          <p>
+            Transitions in CSS are pretty easy, but not well understood.
+            There are some gotchas too, like animating the wrong properties can lead to poor performance on mobile.
+            On top of that, React presents an interesting challenge for transitions, as it takes this thing that's
+            not well understood and provides an unintuitive abstraction layer on top. Declarative animations
+            are powerful, but difficult to understand, and in many ways contrary to way you're trained to think in React.
+          </p>
+          <p>
+            Wax aims to create a simple and performant component library for animations,
+            which leverages composition to make transitions easy to understand.
+          </p>
+        </div>
+
+        <div class="section" id="installation">
+          <h1>Installation</h1>
+          <pre class="code">npm install react-wax</pre>
+          <pre class="code">yarn add react-wax</pre>
+        </div>
+
+        <div class="section" id="basic-usage">
+          <h1>Basic Usage</h1>
+          <p>
+            Components all have sensible defaults, with some having required props for when
+            there isn\'t a sensible option available. All transitions default to 600ms.
+            For more detailed information on options view the API reference below.
+          </p>
+
+<pre class="code">
+<code>import React from 'react'
+import ReactWax from 'react-wax'
+
+class MyComponent extends Component {
+  state = {
+    active: false
+  }
+
+  handleToggle = () => {
+    this.setState(prevState => ({ active: !prevState.active }))
+  }
+
+  render (
+    &lt;div&gt;
+      &lt;button onClick={this.handleToggle}&gt;
+        Toggle
+      &lt;/button&gt;
+      &lt;ReactWax.Fade active={this.state.active}&gt;
+        &lt;YourChildComponents /&gt;
+      &lt;/ReactWax.Fade&gt;
+    &lt;/div&gt;
+  )
+}</code>
+</pre>
+        </div>
+
+        <h1>API Reference</h1>
+        <p>
+          All transitions are implemented using the low-level Transition component.
+          This component can also be used to create custom transitions if you find
+          Wax doesn't do what you need out of the box.
+        </p>
+        <p>The following props can be used with every transition type:</p>
+
+        <div class="proptypes" id="proptypes">
+          <div class="propgroup">
+            <div class="prop">
+              <div><strong>active</strong></div>
+              <div><em>Type:</em> Boolean</div>
+              <div><em>Default:</em> false</div>
+              <p>Switching this prop will cause the transition to run backwards or forwards (true == forwards).</p>
+            </div>
+          </div>
+
+          <div class="propgroup">
+            <div class="prop">
+              <div><strong>duration</strong></div>
+              <div><em>Type:</em> Number</div>
+              <div><em>Default:</em> 600</div>
+              <p>How long the transition will run.</p>
+            </div>
+
+            <div class="prop">
+              <div><strong>durationEnter</strong></div>
+              <p>Same as <em>duration</em> but only applies when active == true.</p>
+            </div>
+
+            <div class="prop">
+              <div><strong>durationLeave</strong></div>
+              <p>Same as <em>duration</em> but only applies when active == false.</p>
+            </div>
+          </div>
+
+          <div class="propgroup">
+            <div class="prop">
+              <div><strong>delay</strong></div>
+              <div><em>Type:</em> Number</div>
+              <div><em>Default:</em> 0</div>
+              <p>Offset the start of the transition by the specified amount.</p>
+            </div>
+
+            <div class="prop">
+              <div><strong>delayEnter</strong></div>
+              <p>Same as <em>delay</em> but only applies when active == true.</p>
+            </div>
+
+            <div class="prop">
+              <div><strong>delayLeave</strong></div>
+              <p>Same as <em>delay</em> but only applies when active == false.</p>
+            </div>
+          </div>
+
+          <div class="propgroup">
+            <div class="prop">
+              <div><strong>easing</strong></div>
+              <div><em>Type:</em> String or Array[4]</div>
+              <div><em>Default:</em> linear</div>
+              <div><em>Option (Enum):</em> linear | ease | easeIn | easeOut | easeInOut</div>
+              <div><em>Option (Array):</em> Array of four numbers describing a cubic bezier - <a href="https://matthewlein.com/ceaser/">More info</a></div>
+              <p>Specifies the easing used by the transition.</p>
+            </div>
+
+            <div class="prop">
+              <div><strong>easingEnter</strong></div>
+              <p>Same as <em>easing</em> but only applies when active == true.</p>
+            </div>
+
+            <div class="prop">
+              <div><strong>easingLeave</strong></div>
+              <p>Same as <em>easing</em> but only applies when active == false.</p>
+            </div>
+          </div>
+
+          <div class="propgroup">
+            <div class="prop">
+              <div><strong>style</strong></div>
+              <div><em>Type:</em> object</div>
+              <div><em>Default:</em> {}</div>
+              <p>Style object that will be used on the Transition container div.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="reference-fade"></div>
+        <div id="reference-rotate"></div>
+        <div id="reference-scale"></div>
+        <div id="reference-skew"></div>
+        <div id="reference-slide"></div>
+        <div id="reference-transition"></div>
+
+        <h1>Advanced Usage</h1>
+        <div id="example-composition"></div>
+        <div id="example-sequencing"></div>
+      </div>
     </div>
 
     <script src="demo.bundle.js"></script>

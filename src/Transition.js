@@ -1,13 +1,17 @@
 import React, {PureComponent, PropTypes} from 'react'
 
 const EasingTypes = {
+  ease: 'ease',
   easeIn: 'ease-in',
   easeInOut: 'ease-in-out',
   easeOut: 'ease-out',
   linear: 'linear'
 }
 
-const EasingPropTypes = PropTypes.oneOf(Object.keys(EasingTypes))
+const EasingPropTypes = PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.string
+])
 
 const BaseProps = {
   active: PropTypes.bool.isRequired,
@@ -21,8 +25,7 @@ const BaseProps = {
   easing: EasingPropTypes,
   easingEnter: EasingPropTypes,
   easingLeave: EasingPropTypes,
-  style: PropTypes.object,
-  timing: PropTypes.string
+  style: PropTypes.object
 }
 
 export class Transition extends PureComponent {
@@ -59,8 +62,13 @@ export class Transition extends PureComponent {
   }
 
   getEasing() {
-    const {easing, timing} = this.props
-    return EasingTypes[easing] || timing || EasingTypes.linear
+    const {easing} = this.props
+
+    if (typeof easing === 'object') {
+      return `cubic-bezier(${easing[0]}, ${easing[1]}, ${easing[2]}, ${easing[3]})`
+    }
+
+    return EasingTypes[easing] || EasingTypes.linear
   }
 
   getEasingEnter() {

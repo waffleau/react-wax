@@ -24,12 +24,11 @@ export default class Fade extends Component {
   render() {
     const {active, delay, duration, easing, from, to} = this.state
     return (
-      <div style={styles.container} id="fade">
+      <div style={styles.container}>
         <h3>{'Fade'}</h3>
         <p>{'Transitions an elements opacity, allowing for a fade in-out effect.'}</p>
         <div className="row">
           <div className="col-lg-6">
-
             <div style={styles.transition}>
               <ReactWax.Fade
                 active={active}
@@ -54,7 +53,23 @@ export default class Fade extends Component {
               onChange={this.handleChange} />
           </div>
           <div className="col-lg-6">
+            <div className="propgroup">
+              <h4>{'Props'}</h4>
+              <div className="prop">
+                <div><strong>{'from (optional)'}</strong></div>
+                <div><em>{'Type:'}</em>{' Number'}</div>
+                <div><em>{'Default:'}</em>{' 0'}</div>
+                <p>{'Target opacity when active == false'}</p>
+              </div>
+              <div className="prop">
+                <div><strong>{'to (optional)'}</strong></div>
+                <div><em>{'Type:'}</em>{' Number'}</div>
+                <div><em>{'Default:'}</em>{' 1'}</div>
+                <p>{'Target opacity when active == true'}</p>
+              </div>
+            </div>
             <CodeBlock>
+              <h4>{'Example'}</h4>
               {
                 '<ReactWax.Fade\n' +
                 `  active={${active}}\n` +
@@ -84,7 +99,8 @@ const styles = {
   transition: {
     backgroundColor: '#eee',
     margin: '0 auto',
-    marginBottom: 20,
+    marginBottom: 60,
+    marginTop: 60,
     height: 100,
     width: 100
   }

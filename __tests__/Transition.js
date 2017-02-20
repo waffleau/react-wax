@@ -126,6 +126,33 @@ test('can have a custom easing', () => {
 
   expect(tree).toMatchSnapshot()
 })
+test('can have a custom easing', () => {
+  const tree = renderer.create(
+    <Transition
+      active
+      easing="easeInOut"
+      fromValue={{ backgroundColor: 'red' }}
+      toValue={{ backgroundColor: 'blue' }}>
+      {'Children'}
+    </Transition>
+  ).toJSON()
+
+  expect(tree).toMatchSnapshot()
+})
+
+test('accepts an array of numbers describing easing', () => {
+  const tree = renderer.create(
+    <Transition
+      active
+      easing={[.1, .3, .7, .9]}
+      fromValue={{ backgroundColor: 'red' }}
+      toValue={{ backgroundColor: 'blue' }}>
+      {'Children'}
+    </Transition>
+  ).toJSON()
+
+  expect(tree).toMatchSnapshot()
+})
 
 test('can have a custom entry easing', () => {
   const tree = renderer.create(
@@ -160,35 +187,6 @@ test('can have a custom style', () => {
     <Transition
       active
       style={{ color: 'yellow' }}
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
-      {'Children'}
-    </Transition>
-  ).toJSON()
-
-  expect(tree).toMatchSnapshot()
-})
-
-test('can have a custom timing', () => {
-  const tree = renderer.create(
-    <Transition
-      active
-      timing="cubic-bezier(0.250, 0.250, 0.750, 0.750)"
-      fromValue={{ backgroundColor: 'red' }}
-      toValue={{ backgroundColor: 'blue' }}>
-      {'Children'}
-    </Transition>
-  ).toJSON()
-
-  expect(tree).toMatchSnapshot()
-})
-
-test('prefers easing over timing', () => {
-  const tree = renderer.create(
-    <Transition
-      active
-      easing="easeInOut"
-      timing="cubic-bezier(0.250, 0.250, 0.750, 0.750)"
       fromValue={{ backgroundColor: 'red' }}
       toValue={{ backgroundColor: 'blue' }}>
       {'Children'}

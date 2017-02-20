@@ -9,7 +9,7 @@ export default class CodeBlock extends Component {
     const {children} = this.props
     return (
       <pre style={styles}>
-        {children}
+        <code>{children}</code>
       </pre>
     )
   }
