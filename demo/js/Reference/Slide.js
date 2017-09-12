@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import ReactWax from '../../../src'
 
@@ -22,7 +22,7 @@ export default class Slide extends Component {
   }
 
   render() {
-    const {active, delay, duration, easing, from, to} = this.state
+    const { active, delay, duration, easing, from, to } = this.state
     return (
       <div style={styles.container}>
         <h3>{'Slide'}</h3>
@@ -50,32 +50,55 @@ export default class Slide extends Component {
               options={ReactWax.Slide.directions}
               value={this.state.to}
               onChange={this.handleChange.bind(this, 'to')} />
-            <TransitionForm
-              {...this.state}
-              onChange={this.handleChange} />
+            <TransitionForm {...this.state} onChange={this.handleChange} />
           </div>
           <div className="col-lg-6">
             <div className="propgroup">
               <h4>{'Props'}</h4>
               <div className="prop">
-                <div><strong>{'from (optional)'}</strong></div>
-                <div><em>{'Type:'}</em>{' String (Enum)'}</div>
-                <div><em>{'Default:'}</em>{' center'}</div>
-                <div><em>{'Options:'}</em>{' center | down | downLeft | downRight | left | right | up | upLeft | upRight'}</div>
+                <div>
+                  <strong>{'from (optional)'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' String (Enum)'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' center'}
+                </div>
+                <div>
+                  <em>{'Options:'}</em>
+                  {
+                    ' center | down | downLeft | downRight | left | right | up | upLeft | upRight'
+                  }
+                </div>
                 <p>{'Target position when active == false'}</p>
               </div>
               <div className="prop">
-                <div><strong>{'to'}</strong></div>
-                <div><em>{'Type:'}</em>{' String (Enum)'}</div>
-                <div><em>{'Default:'}</em>{' undefined'}</div>
-                <div><em>{'Options:'}</em>{' center | down | downLeft | downRight | left | right | up | upLeft | upRight'}</div>
+                <div>
+                  <strong>{'to'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' String (Enum)'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' undefined'}
+                </div>
+                <div>
+                  <em>{'Options:'}</em>
+                  {
+                    ' center | down | downLeft | downRight | left | right | up | upLeft | upRight'
+                  }
+                </div>
                 <p>{'Target position when active == true'}</p>
               </div>
             </div>
             <CodeBlock>
               <h4>{'Example'}</h4>
-              {
-                '<ReactWax.Slide\n' +
+              {'<ReactWax.Slide\n' +
                 `  active={${active}}\n` +
                 `  from="${from}"\n` +
                 `  to="${to}"\n` +
@@ -83,8 +106,7 @@ export default class Slide extends Component {
                 `  delay={${delay}}\n` +
                 `  easing="${easing}">\n` +
                 '  <ShowMeWhatYouGot />\n' +
-                '</ReactWax.Slide>'
-              }
+                '</ReactWax.Slide>'}
             </CodeBlock>
           </div>
         </div>

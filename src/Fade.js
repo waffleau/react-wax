@@ -1,4 +1,5 @@
-import React, {PropTypes, PureComponent} from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 import Transition from './Transition'
 
@@ -12,7 +13,6 @@ export class Fade extends PureComponent {
     ...Transition.baseProps,
     from: PropTypes.number,
     to: PropTypes.number
-
   }
 
   getFromValue() {
@@ -28,7 +28,7 @@ export class Fade extends PureComponent {
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return (
       <Transition
         {...this.props}

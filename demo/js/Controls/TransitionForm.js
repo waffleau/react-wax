@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 
 import ReactWax from '../../../src'
 
@@ -24,7 +24,7 @@ export default class TransitionForm extends Component {
   }
 
   render() {
-    const {active, delay, duration, easing} = this.props
+    const { active, delay, duration, easing } = this.props
     return (
       <div>
         <NumberInput

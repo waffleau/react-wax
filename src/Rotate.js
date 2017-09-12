@@ -1,4 +1,5 @@
-import React, {PropTypes, PureComponent} from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 import Transition from './Transition'
 
@@ -21,7 +22,7 @@ export class Rotate extends PureComponent {
   }
 
   getStyle() {
-    const {style} = this.props
+    const { style } = this.props
     return {
       transformOrigin: 'center center',
       ...style
@@ -35,7 +36,7 @@ export class Rotate extends PureComponent {
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return (
       <Transition
         {...this.props}

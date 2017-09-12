@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import ReactWax from '../../../src'
 
@@ -22,7 +22,7 @@ export default class Rotate extends Component {
   }
 
   render() {
-    const {active, delay, duration, easing, from, to} = this.state
+    const { active, delay, duration, easing, from, to } = this.state
     return (
       <div style={styles.container}>
         <h3>{'Rotate'}</h3>
@@ -48,30 +48,43 @@ export default class Rotate extends Component {
               label="To angle (deg)"
               value={to}
               onChange={this.handleChange.bind(this, 'to')} />
-            <TransitionForm
-              {...this.state}
-              onChange={this.handleChange} />
+            <TransitionForm {...this.state} onChange={this.handleChange} />
           </div>
           <div className="col-lg-6">
             <div className="propgroup">
               <h4>{'Rotate'}</h4>
               <div className="prop">
-                <div><strong>{'from (optional)'}</strong></div>
-                <div><em>{'Type:'}</em>{' Number'}</div>
-                <div><em>{'Default:'}</em>{' 0'}</div>
+                <div>
+                  <strong>{'from (optional)'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' Number'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' 0'}
+                </div>
                 <p>{'Target rotation when active == false'}</p>
               </div>
               <div className="prop">
-                <div><strong>{'to'}</strong></div>
-                <div><em>{'Type:'}</em>{' Number'}</div>
-                <div><em>{'Default:'}</em>{' undefined'}</div>
+                <div>
+                  <strong>{'to'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' Number'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' undefined'}
+                </div>
                 <p>{'Target rotation when active == true'}</p>
               </div>
             </div>
             <CodeBlock>
               <h4>{'Example'}</h4>
-              {
-                '<ReactWax.Rotate\n' +
+              {'<ReactWax.Rotate\n' +
                 `  active={${active}}\n` +
                 `  from={${from}}\n` +
                 `  to={${to}}\n` +
@@ -79,8 +92,7 @@ export default class Rotate extends Component {
                 `  easing="${easing}">\n` +
                 `  delay={${delay}}>\n` +
                 '  <ShowMeWhatYouGot />\n' +
-                '</ReactWax.Rotate>'
-              }
+                '</ReactWax.Rotate>'}
             </CodeBlock>
           </div>
         </div>

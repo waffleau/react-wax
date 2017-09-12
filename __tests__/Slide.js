@@ -7,7 +7,7 @@ test('can transition down', () => {
   const tree = renderer.create(
     <Slide
       active
-      to="down">
+      to="bottom">
       {'Children'}
     </Slide>
   ).toJSON()
@@ -19,7 +19,7 @@ test('can transition down-left', () => {
   const tree = renderer.create(
     <Slide
       active
-      to="downLeft">
+      to="bottomLeft">
       {'Children'}
     </Slide>
   ).toJSON()
@@ -43,7 +43,7 @@ test('can transition up-left', () => {
   const tree = renderer.create(
     <Slide
       active
-      to="upLeft">
+      to="topLeft">
       {'Children'}
     </Slide>
   ).toJSON()
@@ -55,7 +55,7 @@ test('can transition up', () => {
   const tree = renderer.create(
     <Slide
       active={false}
-      to="up">
+      to="top">
       {'Children'}
     </Slide>
   ).toJSON()
@@ -67,7 +67,7 @@ test('can transition up-right', () => {
   const tree = renderer.create(
     <Slide
       active
-      to="upRight">
+      to="topRight">
       {'Children'}
     </Slide>
   ).toJSON()
@@ -91,7 +91,7 @@ test('can transition down-right', () => {
   const tree = renderer.create(
     <Slide
       active
-      to="downRight">
+      to="bottomRight">
       {'Children'}
     </Slide>
   ).toJSON()
@@ -103,7 +103,7 @@ test('has no translation when inactive', () => {
   const tree = renderer.create(
     <Slide
       active={false}
-      to="down">
+      to="center">
       {'Children'}
     </Slide>
   ).toJSON()

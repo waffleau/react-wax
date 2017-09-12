@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import ReactWax from '../../../src'
 
@@ -16,15 +16,13 @@ export default class Composition extends Component {
   }
 
   render() {
-    const {active} = this.state
+    const { active } = this.state
     return (
       <div style={styles.container}>
         <h3>{'Composition'}</h3>
         <p>
-          {
-            'Wax allows for animations to be composed, so you can build up complex ' +
-            'animations using simple steps.'
-          }
+          {'Wax allows for animations to be composed, so you can build up complex ' +
+            'animations using simple steps.'}
         </p>
         <div className="row">
           <div className="col-lg-3">
@@ -37,21 +35,17 @@ export default class Composition extends Component {
                 </ReactWax.Slide>
               </ReactWax.Fade>
             </div>
-            <Button
-              label="Toggle"
-              onClick={this.handleToggle} />
+            <Button label="Toggle" onClick={this.handleToggle} />
           </div>
           <div className="col-lg-9">
             <CodeBlock>
-              {
-                `<ReactWax.Fade active={${active}}>\n` +
+              {`<ReactWax.Fade active={${active}}>\n` +
                 `  <ReactWax.Slide active={${active}} to="right">\n` +
                 `    <ReactWax.Scale active={${active}} to={1.5}>\n` +
                 '      <ShowMeWhatYouGot />\n' +
                 '    </ReactWax.Scale>\n' +
                 '  </ReactWax.Slide>\n' +
-                '</ReactWax.Fade>'
-              }
+                '</ReactWax.Fade>'}
             </CodeBlock>
           </div>
         </div>

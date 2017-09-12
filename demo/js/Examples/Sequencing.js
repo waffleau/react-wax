@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import ReactWax from '../../../src'
 
@@ -16,17 +16,15 @@ export default class Sequencing extends Component {
   }
 
   render() {
-    const {active} = this.state
+    const { active } = this.state
     return (
       <div style={styles.container}>
         <h3>{'Sequencing'}</h3>
         <p>
-          {
-            'More complex compositions can also utilise sequencing, to create multi-step animations. ' +
+          {'More complex compositions can also utilise sequencing, to create multi-step animations. ' +
             'You can control the timing for each step (in either direction). In the following example, ' +
             'we\'re appling a Fade, then a slide after 600ms, and finally a scale after 1200ms. These delays ' +
-            'are reversed when the active state is changed.'
-          }
+            'are reversed when the active state is changed.'}
         </p>
 
         <div className="row">
@@ -34,27 +32,27 @@ export default class Sequencing extends Component {
             <div style={styles.transition}>
               <ReactWax.Fade active={active} delayLeave={1200}>
                 <ReactWax.Slide active={active} delay={600} to="right">
-                  <ReactWax.Scale active={active} delayEnter={1200} from={.5} to={1}>
+                  <ReactWax.Scale
+                    active={active}
+                    delayEnter={1200}
+                    from={0.5}
+                    to={1}>
                     <TransitionIndicator />
                   </ReactWax.Scale>
                 </ReactWax.Slide>
               </ReactWax.Fade>
             </div>
-            <Button
-              label="Toggle"
-              onClick={this.handleToggle} />
+            <Button label="Toggle" onClick={this.handleToggle} />
           </div>
           <div className="col-lg-9">
             <CodeBlock>
-              {
-                `<ReactWax.Fade active={${active}} delayLeave={1200}>\n` +
+              {`<ReactWax.Fade active={${active}} delayLeave={1200}>\n` +
                 `  <ReactWax.Slide active={${active}} delay={600} to="right">\n` +
                 `    <ReactWax.Scale active={${active}} delayEnter={1200} from={.5} to={1}>\n` +
                 '      <ShowMeWhatYouGot />\n' +
                 '    </ReactWax.Scale>\n' +
                 '  </ReactWax.Slide>\n' +
-                '</ReactWax.Fade>'
-              }
+                '</ReactWax.Fade>'}
             </CodeBlock>
           </div>
         </div>

@@ -1,4 +1,5 @@
-import React, {PropTypes, PureComponent} from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 import Transition from './Transition'
 
@@ -27,7 +28,7 @@ export class Skew extends PureComponent {
   }
 
   getStyle() {
-    const {style} = this.props
+    const { style } = this.props
     return {
       transformOrigin: 'center center',
       ...style
@@ -42,13 +43,11 @@ export class Skew extends PureComponent {
   }
 
   valueAsArray(value) {
-    return (typeof value === 'number')
-      ? [value, value]
-      : value
+    return typeof value === 'number' ? [value, value] : value
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return (
       <Transition
         {...this.props}

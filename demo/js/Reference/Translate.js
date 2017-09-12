@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import ReactWax from '../../../src'
 
@@ -24,7 +24,16 @@ export default class Translate extends Component {
   }
 
   render() {
-    const {active, delay, duration, easing, fromX, fromY, toX, toY} = this.state
+    const {
+      active,
+      delay,
+      duration,
+      easing,
+      fromX,
+      fromY,
+      toX,
+      toY
+    } = this.state
     return (
       <div style={styles.container}>
         <h3>{'Translate'}</h3>
@@ -58,30 +67,51 @@ export default class Translate extends Component {
               label="To Y"
               value={toY}
               onChange={this.handleChange.bind(this, 'toY')} />
-            <TransitionForm
-              {...this.state}
-              onChange={this.handleChange} />
+            <TransitionForm {...this.state} onChange={this.handleChange} />
           </div>
           <div className="col-lg-6">
             <div className="propgroup">
               <h4>{'Props'}</h4>
               <div className="prop">
-                <div><strong>{'from (optional)'}</strong></div>
-                <div><em>{'Type:'}</em>{' Array[2]'}</div>
-                <div><em>{'Default:'}</em>{' [0, 0]'}</div>
-                <p>{'Target translation when active == false. Accepts an array of [x, y] values.'}</p>
+                <div>
+                  <strong>{'from (optional)'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' Array[2]'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' [0, 0]'}
+                </div>
+                <p>
+                  {
+                    'Target translation when active == false. Accepts an array of [x, y] values.'
+                  }
+                </p>
               </div>
               <div className="prop">
-                <div><strong>{'to'}</strong></div>
-                <div><em>{'Type:'}</em>{' Array[2]'}</div>
-                <div><em>{'Default:'}</em>{' undefined'}</div>
-                <p>{'Target translation when active == true. Accepts an array of [x, y] values.'}</p>
+                <div>
+                  <strong>{'to'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' Array[2]'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' undefined'}
+                </div>
+                <p>
+                  {
+                    'Target translation when active == true. Accepts an array of [x, y] values.'
+                  }
+                </p>
               </div>
             </div>
             <CodeBlock>
               <h4>{'Example'}</h4>
-              {
-                '<ReactWax.Scale\n' +
+              {'<ReactWax.Scale\n' +
                 `  active={${active}}\n` +
                 `  from={[${fromX}, ${fromY}]}\n` +
                 `  to={[${toX}, ${toY}]}\n` +
@@ -89,8 +119,7 @@ export default class Translate extends Component {
                 `  delay={${delay}}\n` +
                 `  easing="${easing}">\n` +
                 '  <ShowMeWhatYouGot />\n' +
-                '</ReactWax.Rotate>'
-              }
+                '</ReactWax.Rotate>'}
             </CodeBlock>
           </div>
         </div>

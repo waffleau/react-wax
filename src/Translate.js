@@ -1,6 +1,7 @@
-import React, {PropTypes, PureComponent} from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
-import {Transition} from './Transition'
+import { Transition } from './Transition'
 
 export class Translate extends PureComponent {
   static defaultProps = {
@@ -31,7 +32,7 @@ export class Translate extends PureComponent {
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return (
       <Transition
         {...this.props}

@@ -1,4 +1,5 @@
-import React, {PureComponent, PropTypes} from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 const EasingTypes = {
   ease: 'ease',
@@ -8,10 +9,7 @@ const EasingTypes = {
   linear: 'linear'
 }
 
-const EasingPropTypes = PropTypes.oneOfType([
-  PropTypes.array,
-  PropTypes.string
-])
+const EasingPropTypes = PropTypes.oneOfType([PropTypes.array, PropTypes.string])
 
 const BaseProps = {
   active: PropTypes.bool.isRequired,
@@ -62,7 +60,7 @@ export class Transition extends PureComponent {
   }
 
   getEasing() {
-    const {easing} = this.props
+    const { easing } = this.props
 
     if (typeof easing === 'object') {
       return `cubic-bezier(${easing[0]}, ${easing[1]}, ${easing[2]}, ${easing[3]})`
@@ -84,7 +82,7 @@ export class Transition extends PureComponent {
   }
 
   getStyle() {
-    const {active, from, style, to} = this.props
+    const { active, from, style, to } = this.props
 
     return {
       transition: this.getTransition(),
@@ -100,15 +98,23 @@ export class Transition extends PureComponent {
   }
 
   getTransitionEnter() {
-    return this.transitionCSS(this.getDurationEnter(), this.getEasingEnter(), this.getDelayEnter())
+    return this.transitionCSS(
+      this.getDurationEnter(),
+      this.getEasingEnter(),
+      this.getDelayEnter()
+    )
   }
 
   getTransitionLeave() {
-    return this.transitionCSS(this.getDurationLeave(), this.getEasingLeave(), this.getDelayLeave())
+    return this.transitionCSS(
+      this.getDurationLeave(),
+      this.getEasingLeave(),
+      this.getDelayLeave()
+    )
   }
 
   transitionCSS(duration, easing, delay) {
-    const transition = this.getProperties().map((property) => {
+    const transition = this.getProperties().map(property => {
       return `${property} ${duration}ms ${easing} ${delay}ms`
     })
 
@@ -116,12 +122,8 @@ export class Transition extends PureComponent {
   }
 
   render() {
-    const {children} = this.props
-    return (
-      <div style={this.getStyle()}>
-        {children}
-      </div>
-    )
+    const { children } = this.props
+    return <div style={this.getStyle()}>{children}</div>
   }
 }
 

@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 
 export default class Button extends Component {
   static propTypes = {
@@ -6,18 +6,16 @@ export default class Button extends Component {
     onClick: PropTypes.func.isRequired
   }
 
-  handleClick = (event) => {
+  handleClick = event => {
     event.preventDefault()
 
     this.props.onClick()
   }
 
   render() {
-    const {label, onClick} = this.props
+    const { label, onClick } = this.props
     return (
-      <button
-        className="btn btn-block btn-primary"
-        onClick={onClick}>
+      <button className="btn btn-block btn-primary" onClick={onClick}>
         {label}
       </button>
     )

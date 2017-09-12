@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import ReactWax from '../../../src'
 
@@ -22,7 +22,7 @@ export default class Skew extends Component {
   }
 
   render() {
-    const {active, delay, duration, easing, from, to} = this.state
+    const { active, delay, duration, easing, from, to } = this.state
     return (
       <div style={styles.container}>
         <h3>{'Skew'}</h3>
@@ -48,30 +48,51 @@ export default class Skew extends Component {
               label="To scale"
               value={to}
               onChange={this.handleChange.bind(this, 'to')} />
-            <TransitionForm
-              {...this.state}
-              onChange={this.handleChange} />
+            <TransitionForm {...this.state} onChange={this.handleChange} />
           </div>
           <div className="col-lg-6">
             <div className="propgroup">
               <h4>{'Props'}</h4>
               <div className="prop">
-                <div><strong>{'from (optional)'}</strong></div>
-                <div><em>{'Type:'}</em>{' Number or Array[2]'}</div>
-                <div><em>{'Default:'}</em>{' 0'}</div>
-                <p>{'Target skew when active == false. Accepts a single value, or an array of [x, y] values.'}</p>
+                <div>
+                  <strong>{'from (optional)'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' Number or Array[2]'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' 0'}
+                </div>
+                <p>
+                  {
+                    'Target skew when active == false. Accepts a single value, or an array of [x, y] values.'
+                  }
+                </p>
               </div>
               <div className="prop">
-                <div><strong>{'to (optional)'}</strong></div>
-                <div><em>{'Type:'}</em>{' Number or Array[2]'}</div>
-                <div><em>{'Default:'}</em>{' 1'}</div>
-                <p>{'Target skew when active == true. Accepts a single value, or an array of [x, y] values.'}</p>
+                <div>
+                  <strong>{'to (optional)'}</strong>
+                </div>
+                <div>
+                  <em>{'Type:'}</em>
+                  {' Number or Array[2]'}
+                </div>
+                <div>
+                  <em>{'Default:'}</em>
+                  {' 1'}
+                </div>
+                <p>
+                  {
+                    'Target skew when active == true. Accepts a single value, or an array of [x, y] values.'
+                  }
+                </p>
               </div>
             </div>
             <CodeBlock>
               <h4>{'Example'}</h4>
-              {
-                '<ReactWax.Skew\n' +
+              {'<ReactWax.Skew\n' +
                 `  active={${active}}\n` +
                 `  from={${from}}\n` +
                 `  to={${to}}\n` +
@@ -79,8 +100,7 @@ export default class Skew extends Component {
                 `  delay={${delay}}\n` +
                 `  easing="${easing}">\n` +
                 '  <ShowMeWhatYouGot />\n' +
-                '</ReactWax.Skew>'
-              }
+                '</ReactWax.Skew>'}
             </CodeBlock>
           </div>
         </div>
